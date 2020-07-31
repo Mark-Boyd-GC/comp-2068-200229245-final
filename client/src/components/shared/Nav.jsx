@@ -28,17 +28,21 @@ function Nav({ user }) {
               Home
             </Link>
           </li>
-          {/* Need the missing links to the tours and new tour */}
-          <li className='nav-item'>
-            <Link to='/tours' className='nav-link'>
-              Tours
-            </Link>
-          </li>
-          <li className='nav-item'>
-            <Link to='/tours/New' className='nav-link'>
-              New Tours
-            </Link>
-          </li>
+          {user ? (
+            <Fragment>
+              <li className='nav-item'>
+                <Link to='/tours' className='nav-link'>
+                  Tours
+                </Link>
+              </li>
+              <li className='nav-item'>
+                <Link to='/tours/New' className='nav-link'>
+                  New Tours
+                </Link>
+              </li>
+              )
+            </Fragment>
+          ) : null}
         </ul>
 
         <ul className='navbar-nav'>
